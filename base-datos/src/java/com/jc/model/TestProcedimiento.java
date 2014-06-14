@@ -6,8 +6,8 @@
 
 package com.jc.model;
 
-import java.sql.CallableStatement;
-import java.sql.Connection;
+import java.sql.*;
+
 
 /**
  *
@@ -15,16 +15,16 @@ import java.sql.Connection;
  */
 public class TestProcedimiento {
     public static void main(String args[])throws Exception{
-        Conexion c=new Conexion();
-        Connection con=c.conectarse();
-     CallableStatement callate=con.prepareCall("{call autenticar2(?,?,?)}");
+        
+        Connection con=Conexion.conectarse();
+     CallableStatement callate=con.prepareCall("{call guardar_usuario2(?,?,?)}");
         callate.registerOutParameter(1,java.sql.Types.INTEGER);
         callate.setString(2,"juan");
-        callate.setString(3,"campo");
+        callate.setString(3,"qwerty@asdf.com");
       
         callate.execute();
-        int pk=callate.getInt(1);
-        System.out.println("El status de autenticacion es:"+pk);
+        int id=callate.getInt(1);
+        System.out.println("El Id de salida para esta insercion es: "+id);
     }
     
 }
