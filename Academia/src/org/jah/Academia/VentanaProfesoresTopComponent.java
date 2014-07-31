@@ -15,32 +15,32 @@ import org.openide.util.NbBundle.Messages;
  * Top component which displays something.
  */
 @ConvertAsProperties(
-        dtd = "-//org.jah.Academia//VentanaMaterias//EN",
+        dtd = "-//org.jah.Academia//VentanaProfesores//EN",
         autostore = false
 )
 @TopComponent.Description(
-        preferredID = "VentanaMateriasTopComponent",
+        preferredID = "VentanaProfesoresTopComponent",
         //iconBase="SET/PATH/TO/ICON/HERE", 
         persistenceType = TopComponent.PERSISTENCE_ALWAYS
 )
 @TopComponent.Registration(mode = "editor", openAtStartup = true)
-@ActionID(category = "Window", id = "org.jah.Academia.VentanaMateriasTopComponent")
+@ActionID(category = "Window", id = "org.jah.Academia.VentanaProfesoresTopComponent")
 @ActionReference(path = "Menu/Window" /*, position = 333 */)
 @TopComponent.OpenActionRegistration(
-        displayName = "#CTL_VentanaMateriasAction",
-        preferredID = "VentanaMateriasTopComponent"
+        displayName = "#CTL_VentanaProfesoresAction",
+        preferredID = "VentanaProfesoresTopComponent"
 )
 @Messages({
-    "CTL_VentanaMateriasAction=VentanaMaterias",
-    "CTL_VentanaMateriasTopComponent=VentanaMaterias Window",
-    "HINT_VentanaMateriasTopComponent=This is a VentanaMaterias window"
+    "CTL_VentanaProfesoresAction=VentanaProfesores",
+    "CTL_VentanaProfesoresTopComponent=VentanaProfesores Window",
+    "HINT_VentanaProfesoresTopComponent=This is a VentanaProfesores window"
 })
-public final class VentanaMateriasTopComponent extends TopComponent {
+public final class VentanaProfesoresTopComponent extends TopComponent {
 
-    public VentanaMateriasTopComponent() {
+    public VentanaProfesoresTopComponent() {
         initComponents();
-        setName(Bundle.CTL_VentanaMateriasTopComponent());
-        setToolTipText(Bundle.HINT_VentanaMateriasTopComponent());
+        setName(Bundle.CTL_VentanaProfesoresTopComponent());
+        setToolTipText(Bundle.HINT_VentanaProfesoresTopComponent());
         putClientProperty(TopComponent.PROP_CLOSING_DISABLED, Boolean.TRUE);
 
     }
@@ -53,35 +53,19 @@ public final class VentanaMateriasTopComponent extends TopComponent {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jTabbedPane1 = new javax.swing.JTabbedPane();
-
-        jLabel1.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel1, org.openide.util.NbBundle.getMessage(VentanaMateriasTopComponent.class, "VentanaMateriasTopComponent.jLabel1.text")); // NOI18N
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(158, 158, 158)
-                .addComponent(jLabel1)
-                .addContainerGap(152, Short.MAX_VALUE))
-            .addComponent(jTabbedPane1, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addGap(0, 400, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 361, Short.MAX_VALUE))
+            .addGap(0, 300, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JTabbedPane jTabbedPane1;
     // End of variables declaration//GEN-END:variables
     @Override
     public void componentOpened() {
